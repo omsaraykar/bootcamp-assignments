@@ -2,11 +2,11 @@
   Write two functions to generate the Fibonacci sequence:
 
   1. `fibonacci` (Iterative Version):
-     - Takes an integer `n` as input and returns an array containing the first `n` numbers in the Fibonacci sequence.
-     - The Fibonacci sequence is calculated iteratively.
+	 - Takes an integer `n` as input and returns an array containing the first `n` numbers in the Fibonacci sequence.
+	 - The Fibonacci sequence is calculated iteratively.
   
   2. `fibonacciRecursive` (Recursive Version):
-     - Takes an integer `n` as input and returns the `n`-th number in the Fibonacci sequence using recursion.
+	 - Takes an integer `n` as input and returns the `n`-th number in the Fibonacci sequence using recursion.
   
   What is the Fibonacci sequence?
   - The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding numbers.
@@ -39,12 +39,24 @@
 
 // Iterative Fibonacci function
 function fibonacci(n) {
-  // Your code here
+	const result = [];
+	for (let i = 0; i < n; i++) {
+		if (i === 0) {
+			result.push(0);
+		} else if (i === 1) {
+			result.push(1);
+		} else {
+			result.push(result[i - 1] + result[i - 2]);
+		}
+	}
+	return result;
 }
 
 // Recursive Fibonacci function
 function fibonacciRecursive(n) {
-  // Your code here
+	if (n === 0) return 0;
+	if (n === 1) return 1;
+	return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 
 module.exports = { fibonacci, fibonacciRecursive };
