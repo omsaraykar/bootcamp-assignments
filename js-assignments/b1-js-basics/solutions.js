@@ -185,7 +185,17 @@ function highestAverageStudent(obj) {
  * Input: { a:3, b:1, c:2 }
  * Output: [["b",1],["c",2],["a",3]]
  */
-function sortObjectByValues(obj) { }
+function sortObjectByValues(obj) {
+    const res = [];
+
+    for (const [key, val] of Object.entries(obj)) {
+        res.push([key, val]);
+    }
+
+    res.sort((a, b) => a[1] - b[1]);
+
+    return res;
+}
 
 /**
  * 12. Count number of keys in object
