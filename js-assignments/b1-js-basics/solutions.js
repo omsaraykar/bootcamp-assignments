@@ -202,7 +202,9 @@ function sortObjectByValues(obj) {
  * Input: { a:1, b:2, c:3 }
  * Output: 3
  */
-function countKeys(obj) { }
+function countKeys(obj) {
+    return Object.keys(obj).length;
+}
 
 /**
  * 13. Capitalize string values inside object
