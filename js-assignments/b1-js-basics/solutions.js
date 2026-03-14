@@ -211,14 +211,25 @@ function countKeys(obj) {
  * Input: { name:"alice", city:"delhi" }
  * Output: { name:"Alice", city:"Delhi" }
  */
-function capitalizeValues(obj) { }
+function capitalizeValues(obj) {
+    res = {};
+
+    for (const [key, val] of Object.entries(obj)) {
+        res[key] = val.charAt(0).toUpperCase() + val.slice(1);
+    }
+
+    return res;
+}
 
 /**
  * 14. Convert object to query string
  * Input: { name:"Alice", age:25 }
  * Output: "name=Alice&age=25"
  */
-function objectToQuery(obj) { }
+function objectToQuery(obj) {
+    res = Object.entries(obj).map(([key, val]) => `${key}=${val}`).join("&");
+    return res;
+}
 
 /**
  * 15. Count even and odd numbers in array
