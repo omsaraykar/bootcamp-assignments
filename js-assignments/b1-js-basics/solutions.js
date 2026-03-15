@@ -236,14 +236,33 @@ function objectToQuery(obj) {
  * Input: [1,2,3,4,5,6]
  * Output: { even:3, odd:3 }
  */
-function countEvenOdd(arr) { }
+function countEvenOdd(arr) {
+    res = { even: 0, odd: 0 };
+
+    for (const num of arr) {
+        if (num % 2 === 0) res.even++;
+        else res.odd++;
+    }
+
+    return res;
+}
 
 /**
  * 16. Find common keys between two objects
  * Input: {a:1,b:2,c:3}, {b:4,c:5,d:6}
  * Output: ["b","c"]
  */
-function commonKeys(obj1, obj2) { }
+function commonKeys(obj1, obj2) {
+    res = [];
+
+    for (const key in obj1) {
+        if (key in obj2) {
+            res.push(key);
+        }
+    }
+
+    return res;
+}
 
 /**
  * 17. Convert array of objects to lookup by id
