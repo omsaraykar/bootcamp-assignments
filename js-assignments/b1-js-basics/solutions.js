@@ -276,7 +276,12 @@ function arrayToLookup(arr) { }
  * Input: { a:1, b:"hello", c:3 }
  * Output: false
  */
-function allValuesAreNumbers(obj) { }
+function allValuesAreNumbers(obj) {
+    for (const val of Object.values(obj)) {
+        if (typeof val !== "number") return false;
+    }
+    return true;
+}
 
 /**
  * 19. Find common elements present in all arrays of object
