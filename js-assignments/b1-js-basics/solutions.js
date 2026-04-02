@@ -295,7 +295,18 @@ function intersectionAll(obj) { }
  * Input: { a:[1,2,3], b:[4,5] }
  * Output: { even:2, odd:3 }
  */
-function countEvenOddInObjectArrays(obj) { }
+function countEvenOddInObjectArrays(obj) {
+    res = { even: 0, odd: 0 };
+
+    for (const arr of Object.values(obj)) {
+        for (const num of arr) {
+            if (num % 2 === 0) res.even++;
+            else res.odd++;
+        }
+    }
+
+    return res;
+}
 
 
 // =====================
