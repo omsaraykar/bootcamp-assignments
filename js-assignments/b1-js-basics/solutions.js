@@ -318,7 +318,16 @@ function countEvenOddInObjectArrays(obj) {
  * Input: [{user:"A",amount:100},{user:"B",amount:200},{user:"A",amount:50}]
  * Output: { A:150, B:200 }
  */
-function sumTransactions(arr) { }
+function sumTransactions(arr) {
+    res = {};
+
+    for (const { user, amount } of arr) {
+        if (res[user]) res[user] += amount;
+        else res[user] = amount;
+    }
+
+    return res;
+}
 
 /**
  * 22. Transform API response to object (id → name)
